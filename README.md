@@ -11,7 +11,7 @@ Este projeto consolida os conhecimentos do semestre. As equipes atuam como Engen
 
 O sistema deve ler uma base de dados real (Kaggle), processá-la usando a biblioteca **Pandas**, estruturar a inteligência de negócios em **Orientação a Objetos (Classes)** e gerar *insights* visuais através do **Matplotlib/Seaborn**.
 
-## 🛠️ Requisitos Técnicos Obrigatórios
+## Requisitos Técnicos Obrigatórios
 1. **Menu Interativo (`main.py`):** Loop contínuo (`while`) com opções numéricas e tratamento de erros (`try/except`) para evitar travamentos.
 2. **Motor de Dados:** Uso de Pandas para ler o arquivo `.csv`, tratar dados nulos (`dropna` ou `fillna`) e aplicar filtros ou agrupamentos (`groupby`).
 3. **Orientação a Objetos:** A lógica de análise deve estar isolada em métodos dentro de uma ou mais Classes no diretório `src/`.
