@@ -1,4 +1,4 @@
-# Projeto Integrador: Análise de Dados com Python
+# Análise de Dados com Python
 
 **Disciplina:** Linguagem de Programação em Python (2026.2)  
 **Professor:** Ruben Prado  
@@ -30,7 +30,7 @@ Para simular o mercado de trabalho, a entrega não será um arquivo compactado, 
 
 ---
 
-## 💻 Instalação e Execução
+## Instalação e Execução
 Para testar o projeto na sua máquina local, instale as dependências:
 ```bash
 # 1. Instalar bibliotecas
