@@ -83,27 +83,27 @@ python main.py
 
 ### 👥 Integrantes da Equipe
 
-* [Nome do Integrante 1] - [Matrícula]
-* [Nome do Integrante 2] - [Matrícula]
-* [Nome do Integrante 3] - [Matrícula]
+* Ana Júlia Sales Bernardes - 2026.15.55
+* Douglas Cerqueira da Silva - 2025.15.1407
+* Fabiane Rodrigues Sarres - 2026.15.129
+* Gustavo Augusto Rodrigues da Silva - 2026.15.71
+* Júlia da Silva Marques - 2026.15.242
+* Laryssa Cristine Andrade Almeida - 2025.15.1503
 
 ### 🗂️ Sobre o Dataset Escolhido
 
-* **Tema Geral:** (Ex: Vendas de E-commerce, Estatísticas de E-sports, Saúde Pública, etc.)
-* **Fonte de Dados (URL):** (Cole o link do Kaggle aqui)
-* **Motivação:** (Explique em duas frases o que esses dados representam e qual problema ou curiosidade queriam analisar).
+* **Tema Geral:** Saúde do sono e estilo de vida
+* **Fonte de Dados (URL):** https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset
+* **Motivação:** A base reúne dados de 374 pessoas sobre horas de sono, qualidade do sono, estresse, profissão e distúrbios do sono. Quisemos descobrir como o estresse, a profissão e a idade se relacionam com a qualidade do sono.
 
 ### 🏗️ Arquitetura e Estruturação (O que vocês codaram)
 
-* **Módulos / Classes Criadas:** (Explique a responsabilidade da classe criada em `analisador.py`).
-* **Limpeza de Dados:** (Descreva se a base tinha muitos dados nulos e qual técnica foi utilizada para limpá-la - ex: `.dropna()`).
+* **Módulos / Classes Criadas:** Criamos a classe `AnalisadorDeDados` em `src/analisador.py`. Ela lê o CSV, faz a limpeza e tem métodos para as estatísticas, os filtros (por distúrbio e por horas de sono), o agrupamento por profissão com `groupby` e os gráficos. O `main.py` só tem o menu e chama esses métodos.
+* **Limpeza de Dados:** A base quase não tinha dados nulos de verdade, mas na coluna `Sleep Disorder` quem não tem distúrbio aparece como "None", e o Pandas entende isso como vazio. Se usássemos só o `.dropna()`, mais da metade da base seria apagada. Por isso usamos primeiro o `.fillna("Nenhum")` nessa coluna e depois o `.dropna()` e o `.drop_duplicates()`.
 
 ### 📊 Gráficos Desenvolvidos
 
-Descreva detalhadamente as 3 visualizações construídas:
-
-1. **Visão 1:** (Ex: Gráfico de linha comparando a quantidade de chuva entre Jan e Fev).
-2. **Visão 2:** (Ex: Gráfico de barras indicando os 5 produtos mais rentáveis da loja).
-3. **Visão 3:** (Ex: Histograma validando a distribuição de idades na faixa de risco).
-
-```
+1. **Visão 1:** Gráfico de barras com a qualidade média do sono de cada profissão (usando `groupby`).
+2. **Visão 2:** Gráfico de linha com a média de horas de sono por idade (usando `groupby`).
+3. **Visão 3:** Histograma mostrando quantas horas de sono a maioria das pessoas dorme.
+4. **Visão 4:** Gráfico de dispersão comparando o nível de estresse com a qualidade do sono, colorido por distúrbio do sono.
