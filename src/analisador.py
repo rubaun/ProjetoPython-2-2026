@@ -67,3 +67,43 @@ class AnalisadorDados:
                 print(f"- {row['crop_name']}: Compra {row['seed_price']}G | Vende {row['sell_price']}G (Cresce em {row['days_to_grow']} dias)")
 
 
+
+     def grafico_barras_estacoes(self):
+        """Gráfico 1: Barras - Preço médio de venda por Estação."""
+        if self.df.empty:
+            return
+        dados = self.df.groupby('season')['sell_price'].mean().sort_values(ascending=False)
+        plt.figure(figsize=(10, 6))
+        sns.barplot(x=dados.index, y=dados.values, hue=dados.index, palette='Greens', legend=False)
+        plt.title('Preço Médio de Venda das Culturas por Estação')
+        plt.xlabel('Estação do Ano')
+        plt.ylabel('Preço Médio de Venda (Ouros)')
+        plt.tight_layout()
+        plt.show()
+
+
+    def grafico_dispersao_lucro(self):
+        """Gráfico 2: Dispersão - Custo da Semente vs Preço de Venda."""
+        if self.df.empty:
+            return
+        plt.figure(figsize=(8, 6))
+        sns.scatterplot(data=self.df, x='seed_price', y='sell_price', hue='season', s=100, palette='Set2')
+        plt.title('Correlação: Custo da Semente vs. Retorno de Venda')
+        plt.xlabel('Preço de Compra da Semente (Ouros)')
+        plt.ylabel('Preço Final de Venda (Ouros)')
+        plt.grid(True, linestyle='--', alpha=0.6)
+        plt.tight_layout()
+        plt.show()
+
+
+    def grafico_histograma_crescimento(self):
+        """Gráfico 3: Histograma - Distribuição de dias para crescer."""
+        if self.df.empty:
+            return
+        plt.figure(figsize=(10, 5))
+        sns.histplot(self.df['days_to_grow'], bins=12, kde=True, color='purple')
+        plt.title('Distribuição de Tempo de Crescimento das Culturas')
+        plt.xlabel('Dias para Crescer')
+        plt.ylabel('Quantidade de Culturas')
+        plt.tight_layout()
+        plt.show()
