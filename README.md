@@ -74,36 +74,25 @@ pip install -r requirements.txt
 python main.py
 
 ```
-
----
-
-# 📝 Formulário Oficial de Entrega (Preenchimento Obrigatório)
-
-*(Atenção Equipe: Editem este arquivo README.md e preencham os campos abaixo antes de abrir o Pull Request).*
+ ## 📝 Formulário Oficial de Entrega
 
 ### 👥 Integrantes da Equipe
-
-* [Nome do Integrante 1] - [Matrícula]
-* [Nome do Integrante 2] - [Matrícula]
-* [Nome do Integrante 3] - [Matrícula]
+- Sarah Rízia da Silva Domingos - 2026.15.1
+- Matheus Souza - [Matrícula]
+- Anne Beatriz Pelegrini - 2026.15.311
+- Yasmin Souza - 2026.15.299
 
 ### 🗂️ Sobre o Dataset Escolhido
+- **Tema Geral:** Economia e Agricultura Virtual (Stardew Valley)
+- **Fonte de Dados (URL):** https://www.kaggle.com/datasets/kylegraupe/stardew-valley-crops-updated
+- **Motivação:** O projeto analisa os dados de custo, venda e tempo de crescimento das culturas do jogo Stardew Valley para descobrir quais sementes oferecem a melhor margem de lucro por estação do ano.
 
-* **Tema Geral:** (Ex: Vendas de E-commerce, Estatísticas de E-sports, Saúde Pública, etc.)
-* **Fonte de Dados (URL):** (Cole o link do Kaggle aqui)
-* **Motivação:** (Explique em duas frases o que esses dados representam e qual problema ou curiosidade queriam analisar).
-
-### 🏗️ Arquitetura e Estruturação (O que vocês codaram)
-
-* **Módulos / Classes Criadas:** (Explique a responsabilidade da classe criada em `analisador.py`).
-* **Limpeza de Dados:** (Descreva se a base tinha muitos dados nulos e qual técnica foi utilizada para limpá-la - ex: `.dropna()`).
+### 🏗️ Arquitetura e Estruturação
+- **Módulos / Classes Criadas:** A classe `AnalisadorDados` (em `src/analisador.py`) é responsável por carregar os 5 arquivos CSV separados (um para cada estação), concatená-los em um único DataFrame unificado, aplicar a limpeza e encapsular todos os métodos de análise estatística e geração de gráficos.
+- **Limpeza de Dados:** Utilizamos os métodos `.dropna()` para remover linhas com valores nulos e `.drop_duplicates()` para eliminar registros duplicados após a união das 5 tabelas.
 
 ### 📊 Gráficos Desenvolvidos
-
-Descreva detalhadamente as 3 visualizações construídas:
-
-1. **Visão 1:** (Ex: Gráfico de linha comparando a quantidade de chuva entre Jan e Fev).
-2. **Visão 2:** (Ex: Gráfico de barras indicando os 5 produtos mais rentáveis da loja).
-3. **Visão 3:** (Ex: Histograma validando a distribuição de idades na faixa de risco).
-
+1. **Visão 1:** Gráfico de barras indicando o preço médio de venda das culturas agrupadas por estação do ano (Primavera, Verão, Outono, Inverno e Especial).
+2. **Visão 2:** Gráfico de dispersão correlacionando o preço de compra da semente com o retorno final de venda, diferenciado por estação.
+3. **Visão 3:** Histograma validando a distribuição da quantidade de dias necessários para o crescimento das culturas.
 ```
