@@ -73,12 +73,12 @@ pip install -r requirements.txt
 # 2. Iniciar o Menu Interativo
 python main.py
 
-```
+
  ## 📝 Formulário Oficial de Entrega
 
 ### 👥 Integrantes da Equipe
 - Sarah Rízia da Silva Domingos - 2026.15.1
-- Matheus Souza - [Matrícula]
+- Matheus Souza - 2026.15.181
 - Anne Beatriz Pelegrini - 2026.15.311
 - Yasmin Souza - 2026.15.299
 
@@ -95,4 +95,3 @@ python main.py
 1. **Visão 1:** Gráfico de barras indicando o preço médio de venda das culturas agrupadas por estação do ano (Primavera, Verão, Outono, Inverno e Especial).
 2. **Visão 2:** Gráfico de dispersão correlacionando o preço de compra da semente com o retorno final de venda, diferenciado por estação.
 3. **Visão 3:** Histograma validando a distribuição da quantidade de dias necessários para o crescimento das culturas.
-```
