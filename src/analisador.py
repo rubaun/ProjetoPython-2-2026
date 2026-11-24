@@ -68,7 +68,7 @@ class AnalisadorDados:
 
 
 
-     def grafico_barras_estacoes(self):
+    def grafico_barras_estacoes(self):
         """Gráfico 1: Barras - Preço médio de venda por Estação."""
         if self.df.empty:
             return
