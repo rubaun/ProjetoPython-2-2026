@@ -1,4 +1,3 @@
-
 # Projeto: Análise de Dados com Python
 
 **Disciplina:** Linguagem de Programação em Python (2026.2)  
@@ -72,9 +71,9 @@ pip install -r requirements.txt
 
 # 2. Iniciar o Menu Interativo
 python main.py
+```
 
-
- ## 📝 Formulário Oficial de Entrega
+## 📝 Formulário Oficial de Entrega
 
 ### 👥 Integrantes da Equipe
 - Sarah Rízia da Silva Domingos - 2026.15.1
