@@ -83,27 +83,26 @@ python main.py
 
 ### 👥 Integrantes da Equipe
 
-* [Nome do Integrante 1] - [Matrícula]
-* [Nome do Integrante 2] - [Matrícula]
-* [Nome do Integrante 3] - [Matrícula]
+* Pedro Quartieri
+* Braynt Eduardo
+* Gabriel Cavalheiro
+* Kauan Souza
 
 ### 🗂️ Sobre o Dataset Escolhido
 
-* **Tema Geral:** (Ex: Vendas de E-commerce, Estatísticas de E-sports, Saúde Pública, etc.)
-* **Fonte de Dados (URL):** (Cole o link do Kaggle aqui)
-* **Motivação:** (Explique em duas frases o que esses dados representam e qual problema ou curiosidade queriam analisar).
+* **Tema Geral:** Vendas globais da indústria de videogames.
+* **Fonte de Dados (URL):** https://www.kaggle.com/datasets/gregorut/videogamesales
+* **Motivação:** A base reúne dados históricos de vendas de jogos físicos em diferentes regiões (América do Norte, Europa, Japão e demais mercados), plataformas e gêneros. O objetivo da análise foi identificar a evolução do mercado ao longo dos anos e descobrir quais gêneros concentram o maior volume de vendas globais.
 
 ### 🏗️ Arquitetura e Estruturação (O que vocês codaram)
 
-* **Módulos / Classes Criadas:** (Explique a responsabilidade da classe criada em `analisador.py`).
-* **Limpeza de Dados:** (Descreva se a base tinha muitos dados nulos e qual técnica foi utilizada para limpá-la - ex: `.dropna()`).
+* **Módulos / Classes Criadas:** Em `src/analisador.py` foram implementadas a classe abstrata `AnalisadorBase` (definindo o contrato com `@abstractmethod`) e a subclasse `AnalisadorDeDados`, responsável por carregar o CSV com `Pandas`, encapsular o DataFrame no atributo privado `self.__df`, aplicar filtros booleanos, agrupamentos com `.groupby()` e gerar os gráficos com `Matplotlib` e `Seaborn`. O arquivo `main.py` gerencia apenas o menu interativo CLI em laço `while True` com tratamento de exceções (`ValueError`).
+* **Limpeza de Dados:** A base original possui 16.598 registros, apresentando valores nulos nas colunas `Year` e `Publisher` (307 linhas incompletas no total). A limpeza foi encapsulada no método privado `__limpar_dados()`, executado automaticamente no construtor da classe por meio de `.dropna(inplace=True)` e conversão da coluna `Year` para inteiro, resultando em 16.291 registros válidos.
 
 ### 📊 Gráficos Desenvolvidos
 
 Descreva detalhadamente as 3 visualizações construídas:
 
-1. **Visão 1:** (Ex: Gráfico de linha comparando a quantidade de chuva entre Jan e Fev).
-2. **Visão 2:** (Ex: Gráfico de barras indicando os 5 produtos mais rentáveis da loja).
-3. **Visão 3:** (Ex: Histograma validando a distribuição de idades na faixa de risco).
-
-```
+1. **Visão 1:** Gráfico de linha (`sns.lineplot`) exibindo a evolução das vendas globais (em milhões de unidades) agrupadas por ano de lançamento com `.groupby("Year")["Global_Sales"].sum()`.
+2. **Visão 2:** Gráfico de barras (`sns.barplot`) ordenando o total de vendas globais por gênero de jogo em ordem decrescente, permitindo comparar rapidamente os segmentos mais rentáveis.
+3. **Visão 3:** Histograma com curva de densidade KDE (`sns.histplot`) filtrando jogos lançados a partir de 1995 (`Year >= 1995`) para visualizar a distribuição da quantidade de lançamentos ao longo das décadas.
