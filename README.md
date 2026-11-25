@@ -83,9 +83,7 @@ python main.py
 
 ### 👥 Integrantes da Equipe
 
-* [Nome do Integrante 1] - [Matrícula]
-* [Nome do Integrante 2] - [Matrícula]
-* [Nome do Integrante 3] - [Matrícula]
+Mateus André Oliveira de Alcantara - 62355366
 
 ### 🗂️ Sobre o Dataset Escolhido
 
